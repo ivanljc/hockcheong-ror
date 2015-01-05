@@ -1,0 +1,9 @@
+<h1>Welcome, <%= @guest_name %> to Hock Cheong Logistics</h1>
+
+<%  if @guest_name == "Afian" %>
+    <h2>Welcome development team member</h2>
+<% else %>
+    <h2>Welcome normal user</h2>
+<% end %>
+
+<p>Find me in app/views/pages/home.html.erb</p>
