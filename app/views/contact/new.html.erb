@@ -1,0 +1,74 @@
+<div class="container content" style = "margin-bottom: 100px">
+    <div class="row margin-bottom-30">
+        <div class="col-md-9 mb-margin-bottom-30">
+            <p>Please fill in your details to contact us</p><br />
+            <%= form_for @message, :url => contact_path do |form| %>
+                <label>Name</label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <%= form.text_field :name, :class => "form-control" %>
+                </div>
+            </div>
+            <label>Email <span class="color-red">*</span></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <%= form.text_field :email, :class => "form-control" %>
+                </div>
+            </div>
+            <label>Subject <span class="color-red">*</span></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <%= form.text_field :subject, :class => "form-control" %>
+                </div>
+            </div>
+            <label>Message</label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-11 col-md-offset-0">
+                    <%= form.text_area :body, :class => "form-control", :rows => "8"%>
+                </div>
+            </div>
+            <p><button type="submit" class="btn-u">Send Message</button></p>
+        <% end %>
+        </div><!--/col-md-9-->
+        <div class="col-md-3">
+            <!-- Contacts -->
+            <div class="headline" style = "margin-top: -5px"><h2>Contact</h2></div>
+            <ul class="list-unstyled who margin-bottom-30">
+                <li><a href="mailto:afian@csail.mit.edu"><i class="fa fa-envelope"></i>afian@csail.mit.edue</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+65 6601 4053</a></li>
+            </ul>
+        </div><!--/col-md-3-->
+    </div><!--/row-->
+</div><!--/container-->
+<!-- CSS Global Compulsory -->
+<%= stylesheet_link_tag "unify/css/style.css" %>
+<!-- CSS Implementing Plugins -->
+<%= stylesheet_link_tag "unify/plugins/line-icons/line-icons.css" %>
+<%= stylesheet_link_tag "unify/plugins/font-awesome/css/font-awesome.min.css" %>
+<%= stylesheet_link_tag "unify/plugins/flexslider/flexslider.css" %>
+<%= stylesheet_link_tag "unify/plugins/parallax-slider/css/parallax-slider.css" %>
+<!-- CSS Page Style -->
+<%= stylesheet_link_tag "unify/css/pages/page_contact.css" %>
+<!-- CSS Theme -->
+<%= stylesheet_link_tag "unify/css/themes/default.css" %>
+<!-- CSS Customization -->
+<%= stylesheet_link_tag "unify/css/custom.css" %>
+<!-- JS Global Compulsory -->
+<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" %>
+<%= javascript_include_tag "unify/plugins/bootstrap/js/bootstrap.min.js" %>
+<%= javascript_include_tag "unify/plugins/jquery-migrate-1.2.1.min.js" %>
+<!-- JS Implementing Plugins -->
+<%= javascript_include_tag "unify/plugins/jquery.mixitup.min.js" %>
+<%= javascript_include_tag "unify/plugins/parallax-slider/js/modernizr.js" %>
+<%= javascript_include_tag "unify/plugins/parallax-slider/js/jquery.cslider.js" %>
+<!-- JS Page Level -->
+<%= javascript_include_tag "unify/js/app.js" %>
+<%= javascript_include_tag "unify/js/pages/index.js" %>
+<%= javascript_include_tag "unify/js/pages/page_portfolio.js" %>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+        App.init();
+        PortfolioPage.init();
+        Index.initParallaxSlider();
+        });
+</script>
