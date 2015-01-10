@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :emails
+
     #get 'pages/home'
     root 'pages#home'
 
