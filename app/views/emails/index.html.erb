@@ -1,35 +1,41 @@
 <div class='container'>
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-<h1>Listing Emails</h1>
+    <h1>Listing Emails</h1>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Subject</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Body</th>
+                <th>Tags</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
 
-  <tbody>
-    <% @emails.each do |email| %>
-      <tr>
-        <td><%= email.name %></td>
-        <td><%= email.email %></td>
-        <td><%= email.subject %></td>
-        <td><%= email.body %></td>
-        <td><%= link_to 'Show', email %></td>
-        <td><%= link_to 'Edit', edit_email_path(email) %></td>
-        <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tbody>
+        <% @emails.each do |email| %>
+            <tr>
+            <td><%= email.name %></td>
+            <td><%= email.email %></td>
+            <td><%= email.subject %></td>
+            <td><%= email.body %></td>
+            <% if email.tag.present? %>
+                <td><%= email.tag.try(:name) %></td>
+        <% else %>
+                <td>No tag</td>
+        <% end %>
+            <td><%= link_to 'Show', email %></td>
+            <td><%= link_to 'Edit', edit_email_path(email) %></td>
+            <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
+        </tbody>
+    </table>
 
-<br>
+    <br>
 
-<%= link_to 'New Email', new_email_path %>
+    <%= link_to 'New Email', new_email_path %>
 </div>

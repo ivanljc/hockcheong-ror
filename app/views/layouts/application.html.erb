@@ -12,5 +12,48 @@
 <%= render "layouts/header" %>
 <%= yield %>
 
+
+<!-- CSS Global Compulsory -->
+<%= stylesheet_link_tag "/themes/unify/css/style.css" %>
+
+<!-- CSS Implementing Plugins -->
+<%= stylesheet_link_tag "/themes/unify/plugins/line-icons/line-icons.css" %>
+<%= stylesheet_link_tag "/themes/unify/plugins/font-awesome/css/font-awesome.min.css" %>
+<%= stylesheet_link_tag "/themes/unify/plugins/flexslider/flexslider.css" %>
+<%= stylesheet_link_tag "/themes/unify/plugins/parallax-slider/css/parallax-slider.css" %>
+
+<!-- CSS Page Style -->
+<%= stylesheet_link_tag "/themes/unify/css/pages/portfolio-v2.css" %>
+
+<!-- CSS Theme -->
+<%= stylesheet_link_tag "/themes/unify/css/themes/red.css" %>
+
+<!-- CSS Customization -->
+<%= stylesheet_link_tag "/themes/unify/css/custom.css" %>
+
+<!-- JS Global Compulsory -->
+<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" %>
+<%= javascript_include_tag "/themes/unify/plugins/bootstrap/js/bootstrap.min.js" %>
+<%= javascript_include_tag "/themes/unify/plugins/jquery-migrate-1.2.1.min.js" %>
+
+<!-- JS Implementing Plugins -->
+<%= javascript_include_tag "/themes/unify/plugins/jquery.mixitup.min.js" %>
+<%= javascript_include_tag "/themes/unify/plugins/parallax-slider/js/modernizr.js" %>
+<%= javascript_include_tag "/themes/unify/plugins/parallax-slider/js/jquery.cslider.js" %>
+
+
+
+<!-- JS Page Level -->
+<%= javascript_include_tag "/themes/unify/js/app.js" %>
+<%= javascript_include_tag "/themes/unify/js/pages/index.js" %>
+<%= javascript_include_tag "/themes/unify/js/pages/page_portfolio.js" %>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        PortfolioPage.init();
+        Index.initParallaxSlider();
+    });
+</script>
 </body>
 </html>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+
   resources :emails
 
     #get 'pages/home'
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
 
     get 'contact' => 'contact#new'
     post 'contact' => 'contact#create'
+
+    get 'emails_by_date' => 'emails#emails_by_date'
+    get 'email_addresses' => 'emails#get_unique_emails'
+    get 'email_count' => 'emails#email_count'
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

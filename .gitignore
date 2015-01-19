@@ -15,3 +15,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# unify-temp
+/unify-temp

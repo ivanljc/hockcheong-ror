@@ -1,9 +1,108 @@
-<h1>Welcome, <%= @guest_name %> to Hock Cheong Logistics</h1>
+<!--==  Slider ===-->
+<div class="slider-inner">
+  <div id="da-slider" class="da-slider">
+    <div class="da-slide">
+      <h2>
+        <i>
+          DOOR TO DOOR DELIVERY
+        </i> <br />
+        <i>
+          RECEIVING / WAREHOUSING / SHIPPING
+        </i> <br />
+        <i>
+          LOOSE CARGO / FULL CONTAINER
+      </i></h2>
+      <p><i>Proudly Serving</i> <br /> <i>Singapore / Malaysia / Brunei</i></p>
+    </h2>
+  </div>
 
-<%  if @guest_name == "Afian" %>
-    <h2>Welcome development team member</h2>
-<% else %>
-    <h2>Welcome normal user</h2>
-<% end %>
+</div><!--/da-slider-->
+</div><!--/slider-->
+<!--=== End Slider ===-->
 
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- Purchase Block -->
+<div class="purchase">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <span>
+          Hock Cheong is an integrated logistics service
+        </span>
+        <p>Established in 1945, we started our humble beginning by delivering and distributing the Straits Times newspapers, movie films and trailers in Malaya and Singapore. Now, we deliver books, valves, generator sets and delicate electronics products like computers and printers. No cargo is too big or too small for us to deliver!</p>
+      </div>
+      <div class="col-md-3 btn-buy animated fadeInRight">
+        <%= link_to "<i class='fa fa-paper-plane'></i>Contact".html_safe , contact_path, :class => "btn-u btn-u-lg" %> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content Part -->
+<div class="container">
+  <!-- Service Blocks -->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="service">
+        <i class="service-icon fa fa-heart"></i>
+        <div class="desc">
+          <h4>Caring Attitude</h4>
+          <p>We adopt  the positive and possible attitude: We Care, We Can & We Will! Our core values of Honesty and Integrity will assure that your cargo is always safe with us.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service">
+        <i class="fa fa-truck service-icon"></i>
+        <div class="desc">
+          <h4>One Stop Service</h4>
+          <p>We have wide range and comprehensive One-Stop Value-Added & Integrated Services, which will allow you to focus on your core business and competency</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service">
+        <i class="fa fa-money service-icon"></i>
+        <div class="desc">
+          <h4>Transhipment without GST</h4>
+          <p>With our Major Exporter Scheme (MES) status, your transhipment cargo via Singapore to other countries will not be subject to GST charges.</p>
+        </div>
+      </div>
+    </div>
+  </div><!--/row-->
+  <div class="row">
+    <div class="col-md-4">
+      <div class="service">
+        <i class="service-icon fa fa-home"></i>
+        <div class="desc">
+          <h4>Door to Door Delivery</h4>
+          <p>With our service centers and warehouses strategically located in various major cities in Malaysia, Brunei and Singapore, you will be assured of courier speed Door-to-Door Delivery at economy price.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service">
+        <i class="service-icon fa fa-bar-chart-o"></i>
+        <div class="desc">
+          <h4>Decades of Experience</h4>
+          <p>Establish since 1945, we have many years of experience in delivering all types of cargo from all kind of industry.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="service">
+        <i class="service-icon fa fa-globe"></i>
+        <div class="desc">
+          <h4>Shipment Tracking</h4>
+          <p>With our custom build computerize logistics system, you can track your shipment at any place anytime</p>
+        </div>
+      </div>
+    </div>
+  </div><!--/row-->
+  <!-- End Service Blokcs -->
+</div>
+<!--/container-->
+
+
+
+
+

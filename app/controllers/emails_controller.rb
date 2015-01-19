@@ -61,6 +61,38 @@ class EmailsController < ApplicationController
     end
   end
 
+  # API Practice
+  #
+  # Retrieve email's hashed by date
+  # Params:
+  #     - start_date: 2014-11-17 (Specifies started date)
+
+  def emails_by_date
+      puts params[:start_date]
+      puts params[:end_date]
+
+      #convert time to SG Time
+      @start_date = Time.parse(params[:start_date])
+      @end_date = Time.parse(params[:end_date])
+
+      @emails = Email.where("created_at >= ?", @start_date.beginning_of_day).where("created_at <= ?", @end_date.end_of_day)
+
+      #@emails_hash = @emails.group_by(&:email)
+      @emails_hash = @emails.group_by {|email| email.created_at.strftime('%Y-%m-%d') }
+      render json: @emails_hash
+  end
+
+  def get_unique_emails
+      render json: (Email.all.map {|email| email.email}).uniq
+  end
+
+  def email_count
+      @emails_hash = Email.all.group_by{ |email| email.email}
+      @emails_count = @emails_hash.map{|address, array| [address, array.count]}
+      
+      render json: Hash[@emails_count]
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_email
@@ -69,6 +101,6 @@ class EmailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def email_params
-      params.require(:email).permit(:name, :email, :subject, :body)
+      params.require(:email).permit(:name, :email, :subject, :body, :tag_id)
     end
 end
